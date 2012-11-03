@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0323419A-3675-42DA-B58A-6B5FF4D4BC96}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>dwgsms</RootNamespace>
+    <AssemblyName>dwgsms</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>true</Externalconsole>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>true</Externalconsole>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="DWG\Gateway.cs" />
+    <Compile Include="dwgapi\str_t.cs" />
+    <Compile Include="dwgapi\dwg_port_status.cs" />
+    <Compile Include="dwgapi\dwg_ports_status.cs" />
+    <Compile Include="dwgapi\dwg_sms_result_code.cs" />
+    <Compile Include="dwgapi\dwg_sms_res.cs" />
+    <Compile Include="dwgapi\dwg_sms_received.cs" />
+    <Compile Include="dwgapi\dwg_message_callback_t.cs" />
+    <Compile Include="dwgapi\smsgw.cs" />
+    <Compile Include="dwgapi\dwg_port_status_value.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="dwgapi\" />
+    <Folder Include="DWG\" />
+  </ItemGroup>
+</Project>
