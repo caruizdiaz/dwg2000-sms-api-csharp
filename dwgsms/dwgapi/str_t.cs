@@ -9,10 +9,11 @@ using System.Runtime.InteropServices;
 namespace dwgsms.API
 {
 	[StructLayout(LayoutKind.Sequential)]
-	public unsafe struct str_t
+	public /*unsafe*/ struct str_t
 	{
-		[MarshalAs(UnmanagedType.LPTStr)]
-		public string s;
+//		[MarshalAs(UnmanagedType.LPTStr)]
+//		public string s;
+		public IntPtr s;
 		public int len;
 	}
 }

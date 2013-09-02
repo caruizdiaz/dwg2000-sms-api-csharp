@@ -11,8 +11,7 @@ namespace dwgsms.API
 	public class smsgw
 	{
 		[DllImport("libdwgsms.pub.so", CharSet = CharSet.Ansi)]
-		public static extern int dwg_start_server(int port, IntPtr callbacks);
-		//public static extern int dwg_start_server(int port, ref dwg_message_callback_t callbacks);
+		public static extern int dwg_start_server(int port, IntPtr callbacks);		
 		
 		[DllImport("libdwgsms.pub.so", CharSet = CharSet.Ansi)]
 		public static extern int dwg_stop_server();
@@ -20,9 +19,8 @@ namespace dwgsms.API
 		[DllImport("libdwgsms.pub.so", CharSet = CharSet.Ansi)]
 		public static extern int dwg_send_sms(ref str_t destination, ref str_t message, int port);
 		
-/*		[DllImport("libdwgsms.pub.so")]
-		public static extern int dwg_send_sms(ref str_t destination, ref str_t message);
-				 */
+		[DllImport("libdwgsms.pub.so", CharSet = CharSet.Ansi)]
+		public static extern int dwg_send_ussd(ref str_t destination, int port);	
 	}
 }
 

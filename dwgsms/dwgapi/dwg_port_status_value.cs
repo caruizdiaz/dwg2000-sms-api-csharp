@@ -12,7 +12,8 @@ namespace dwgsms.API
 		WORKS,
 		NO_SIM_CARD,
 		NOT_REGISTERED,
-		UNAVAILABLE
+		UNAVAILABLE,
+		UNKNOWN
 	}
 }
 

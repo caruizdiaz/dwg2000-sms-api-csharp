@@ -47,6 +47,8 @@
     <Compile Include="dwgapi\dwg_message_callback_t.cs" />
     <Compile Include="dwgapi\smsgw.cs" />
     <Compile Include="dwgapi\dwg_port_status_value.cs" />
+    <Compile Include="dwgapi\dwg_ussd_received.cs" />
+    <Compile Include="dwgapi\dwg_ussd_result_code.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -25,6 +25,7 @@ namespace dinstarsmsclient
 			Gateway.StatusChanged += HandleGatewayStatusChanged;
 			Gateway.SMSReceived += HandleGatewaySMSReceived;
 			Gateway.SentSMSStatus += HandleGatewaySentSMSStatus;
+			Gateway.USSDReceived += HandleGatewayUSSDReceived;
 			
 			Console.WriteLine("Starting server at port {0}... waiting for connection", port);
 			
@@ -58,6 +59,11 @@ namespace dinstarsmsclient
 				Gateway.SendMessage(number, text, sendingPort);
 			}
 		}
+
+		static void HandleGatewayUSSDReceived (string gatewayIP, int port, dwg_ussd_result_code status, string message)
+		{
+			Console.WriteLine("RCVD USSD: gw {0} | port {1} | text '{3}'", gatewayIP, port, message);		
+		}
 		
 		static void HandleGatewaySentSMSStatus (string gatewayIP, string number, int port, dwg_sms_result_code status)
 		{			
@@ -66,6 +72,9 @@ namespace dinstarsmsclient
 
 		static void HandleGatewaySMSReceived(string gatewayIP, string number, string text, int port, string timestamp)
 		{			
+			if (text == null)
+				text = string.Empty;
+			
 			Console.WriteLine("RCVD SMS: gw {0} | number {1} | port {2} | text '{3}'", gatewayIP, number, port, text);		
 		}
 
